@@ -1,5 +1,6 @@
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
+import pages.*;
 
 import java.util.concurrent.TimeUnit;
 
@@ -34,7 +35,7 @@ public class JenkinsTest {
         page = ((MainPage) page).manageJenkins();
         assertNotNull(((ManageJenkinsPage) page).getManageUsersText());
         assertNotNull(((ManageJenkinsPage) page).getDtManageUsers());
-        //assertTrue(((ManageJenkinsPage)page).getManageUsersText().getText().contains("Создание, удаление и модификция пользователей, имеющих право доступа к Jenkins" ));
+        //assertTrue(((pages.ManageJenkinsPage)page).getManageUsersText().getText().contains("Создание, удаление и модификция пользователей, имеющих право доступа к Jenkins" ));
 
 
         //№2.	После клика по ссылке, внутри которой содержится элемент dt с текстом «Manage Users», становится доступна ссылка «Create User».
