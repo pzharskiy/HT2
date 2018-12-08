@@ -10,9 +10,9 @@ public class DeleteUserPage extends Page {
     @FindBy(name = "delete")
     private WebElement QuestionAboutDeleting;
 
-    @FindBy(id = "yui-gen3-button")
-
-    private WebElement linkDeleteButton;
+    //@FindBy(id = "yui-gen5-button") - id кнопок менялся с yui-gen3-button на текущий
+    @FindBy(xpath = "//button[contains(text(), 'Да')]")
+    private WebElement deleteButton;
 
     public DeleteUserPage(WebDriver driver) {
         super(driver);
@@ -20,11 +20,21 @@ public class DeleteUserPage extends Page {
 
     public UsersPage deleteUser() {
 
-        linkDeleteButton.click();
+        deleteButton.click();
         return PageFactory.initElements(driver, UsersPage.class);
     }
 
     public String getQuestionAboutDeleting() {
         return QuestionAboutDeleting.getText();
+    }
+
+    public String getButtonColor()
+    {
+        return deleteButton.getCssValue("background-color");
+    }
+
+    public void open()
+    {
+        //driver.navigate().to(BASE_URL+"securityRealm/user/someuser/delete");
     }
 }

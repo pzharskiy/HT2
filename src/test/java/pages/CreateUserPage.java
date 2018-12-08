@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,8 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 
 public class CreateUserPage extends Page {
 
-    @FindBy(linkText = "Создать пользователя")
-    private WebElement createUsers;
+    /*@FindBy(linkText = "Создать пользователя")
+    private WebElement createUsers;*/
 
     @FindBy(xpath = "//*[@id=\"main-panel\"]/form")
     private WebElement form;
@@ -28,7 +29,8 @@ public class CreateUserPage extends Page {
     @FindBy(name = "email")
     private WebElement email;
 
-    @FindBy(id = "yui-gen3-button")
+    //@FindBy(id = "yui-gen5-button")
+    @FindBy(xpath = "//button[contains(text(), 'Создать пользователя')]")
     private WebElement createUserFromForm;
 
     public CreateUserPage(WebDriver driver) {
@@ -65,5 +67,16 @@ public class CreateUserPage extends Page {
         email.sendKeys(some_email);
         createUserFromForm.click();
         return PageFactory.initElements(driver, UsersPage.class);
+    }
+
+    public String getButtonColor()
+    {
+        //driver.findElement(By.id("yui-gen5-button"));
+        return driver.findElement(By.id("yui-gen5-button")).getCssValue("background-color");
+    }
+
+    public void open()
+    {
+        driver.navigate().to(BASE_URL+"securityRealm/addUser");
     }
 }

@@ -21,10 +21,16 @@ public class RegistrationPage extends Page {
         super(driver);
     }
 
-    public MainPage SignIn(String name, String password) {
+    public MainPage signIn(String name, String password) {
         username.sendKeys(name);
         this.password.sendKeys(password);
         button.click();
         return PageFactory.initElements(driver, MainPage.class);
+    }
+
+    public void open()
+    {
+        driver.navigate().to(BASE_URL);
+       // driver.get("http://localhost:8080/");
     }
 }

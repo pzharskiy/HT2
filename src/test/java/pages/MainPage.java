@@ -19,5 +19,8 @@ public class MainPage extends Page {
         return PageFactory.initElements(driver, ManageJenkinsPage.class);
     }
 
-
+    public void open()
+    {
+        driver.navigate().to(BASE_URL);
+    }
 }

@@ -15,9 +15,6 @@ public class UsersPage extends Page {
     @FindBy(id = "people")
     private WebElement tableOfPeople;
 
-   /* @FindBy(linkText = "someuser")
-    private WebElement userID;*/
-
     @FindBy(xpath = "//a[starts-with(@href, \"user/someuser/delete\")]")
     private WebElement linkDeleteUser;
 
@@ -63,5 +60,10 @@ public class UsersPage extends Page {
 
     public WebElement getLinkCreateUsers() {
         return linkCreateUsers;
+    }
+
+    public void open()
+    {
+        driver.navigate().to(BASE_URL+"securityRealm/");
     }
 }
