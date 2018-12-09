@@ -5,8 +5,8 @@ import org.openqa.selenium.WebDriver;
 import pages.*;
 
 public class Steps {
-    private WebDriver driver;
 
+    private WebDriver driver;
 
     public void openBrowser() {
         driver = DriverSingleton.getDriver();

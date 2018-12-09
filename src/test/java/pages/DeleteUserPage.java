@@ -35,6 +35,6 @@ public class DeleteUserPage extends Page {
 
     public void open()
     {
-        //driver.navigate().to(BASE_URL+"securityRealm/user/someuser/delete");
+
     }
 }

@@ -9,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public abstract class Page {
     WebDriver driver;
+
     protected final String BASE_URL="http://localhost:8080/";
 
     @FindBy(xpath = "//a[contains(text(), 'Включить автообновление страниц')]")
@@ -41,14 +42,25 @@ public abstract class Page {
 
     public boolean getAutoRefreshTrue()
     {
-        return !driver.findElements(By.xpath("//a[contains(text(), 'Включить автообновление страниц')]")).isEmpty();
-        //return autoRefreshTrue.isEnabled();
+        try {
+            return autoRefreshTrue.isEnabled();
+        }
+        catch(Exception e) {
+            return false;
+    }
+        //return !driver.findElements(By.xpath("//a[contains(text(), 'Включить автообновление страниц')]")).isEmpty();
+
     }
 
     public boolean getAutoRefreshFalse()
     {
-        return !driver.findElements(By.xpath("//a[contains(text(), 'Отключить автообновление страниц')]")).isEmpty();
-        //return autoRefreshFalse.isEnabled();
+        try {
+            return autoRefreshFalse.isEnabled();
+        }
+        catch(Exception e) {
+            return false;
+        }
+        //return !driver.findElements(By.xpath("//a[contains(text(), 'Отключить автообновление страниц')]")).isEmpty();
     }
 
     public abstract void open();

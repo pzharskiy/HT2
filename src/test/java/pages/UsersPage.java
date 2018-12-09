@@ -31,6 +31,7 @@ public class UsersPage extends Page {
     }
 
     public boolean findTextAboutUser(String user) {
+        //Использую данный вариант для болеее гибкого поиска юзера
         if (driver.findElements(By.linkText(user)).isEmpty()) {
             return false;
         } else return true;
@@ -39,18 +40,16 @@ public class UsersPage extends Page {
     public boolean findLinkToDelete(String user) {
 
         //Если с помощью FindBy, то нужно отлавливать NullPointer
+        //Использую данный вариант для болеее гибкого поиска юзера
         if (driver.findElements(By.xpath("//a[starts-with(@href, \"user/" + user + "/delete\")]")).isEmpty()) {
             return false;
         } else return true;
-/*        try {
-            if (linkDeleteAdmin.isEnabled()
-            ) {
-                return true;
-            }
+
+       /*try {
+            return linkDeleteAdmin.isEnabled();
         } catch (Exception e) {
             return false;
-        }
-        return false;*/
+        }*/
     }
 
     public DeleteUserPage clickLinkToDelete() {

@@ -12,8 +12,8 @@ public class JenkinsTest {
 
 
     private Steps steps;
-    private final String USERNAME = "login";
-    private final String PASSWORD = "password";
+    private final String USERNAME = "pzharskiy";
+    private final String PASSWORD = "Riseagainst";
 
     @BeforeMethod(description = "Init browser")
     public void setUp()
