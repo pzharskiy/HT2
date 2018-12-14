@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class MainPage extends Page {
 
-    @FindBy(linkText = "Настроить Jenkins")
+    @FindBy(linkText = "Manage Jenkins")
     private WebElement linkManageJenkins;
 
     public MainPage(WebDriver driver) {

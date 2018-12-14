@@ -11,7 +11,7 @@ public class DeleteUserPage extends Page {
     private WebElement QuestionAboutDeleting;
 
     //@FindBy(id = "yui-gen5-button") - id кнопок менялся с yui-gen3-button на текущий
-    @FindBy(xpath = "//button[contains(text(), 'Да')]")
+    @FindBy(xpath = "//button[contains(text(), 'Yes')]")
     private WebElement deleteButton;
 
     public DeleteUserPage(WebDriver driver) {

@@ -11,9 +11,9 @@ public abstract class Page {
 
     protected final String BASE_URL = "http://localhost:8080/";
 
-    @FindBy(xpath = "//a[contains(text(), 'Включить автообновление страниц')]")
+    @FindBy(xpath = "//a[contains(text(), 'ENABLE AUTO REFRESH')]")
     WebElement autoRefreshTrue;
-    @FindBy(xpath = "//a[contains(text(), 'Отключить автообновление страниц')]")
+    @FindBy(xpath = "//a[contains(text(), 'DISABLE AUTO REFRESH')]")
     WebElement autoRefreshFalse;
 
     public Page(WebDriver driver) {

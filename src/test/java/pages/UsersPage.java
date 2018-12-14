@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 public class UsersPage extends Page {
 
     //@FindBy(xpath = "//a[starts-with(@href, \"addUser\")]")
-    @FindBy(linkText = "Создать пользователя")
+    @FindBy(linkText = "Create User")
     private WebElement linkCreateUsers;
 
     @FindBy(id = "people")

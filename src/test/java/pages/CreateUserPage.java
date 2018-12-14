@@ -27,7 +27,7 @@ public class CreateUserPage extends Page {
     private WebElement email;
 
     //@FindBy(id = "yui-gen5-button")
-    @FindBy(xpath = "//button[contains(text(), 'Создать пользователя')]")
+    @FindBy(xpath = "//button[contains(text(), 'Create User')]")
     private WebElement createUserFromForm;
 
     public CreateUserPage(WebDriver driver) {

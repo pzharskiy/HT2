@@ -8,16 +8,16 @@ import org.openqa.selenium.support.PageFactory;
 public class ManageJenkinsPage extends Page {
 
 
-    @FindBy(xpath = "//dt[contains(text(), 'Управление пользователями')]")
+    @FindBy(xpath = "//dt[contains(text(), 'Manage Users')]")
     private WebElement dtManageUsers;
 
-    @FindBy(xpath = "//dd[contains(text(), 'Создание, удаление и модификция пользователей, имеющих право доступа к Jenkins')]")
+    @FindBy(xpath = "//dd[contains(text(), 'Create/delete/modify users that can log in to this Jenkins')]")
     private WebElement manageUsersText;
 
     //Поиск элемента по ссылке, что лучше, однако не совсем соответсвует условию
     //@FindBy(xpath = "//a[starts-with(@href, \"securityRealm/\")]")
     //Поиск элемента точно по условию задания
-    @FindBy(xpath = "//dt[contains(text(), 'Управление пользователями')]/ancestor::a")
+    @FindBy(xpath = "//dt[contains(text(), 'Manage Users')]/ancestor::a")
     private WebElement linkManageUser;
 
     public ManageJenkinsPage(WebDriver driver) {
