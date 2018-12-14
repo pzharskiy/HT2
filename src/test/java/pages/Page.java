@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 public abstract class Page {
     WebDriver driver;
 
-    protected final String BASE_URL="http://localhost:8080/";
+    protected final String BASE_URL = "http://localhost:8080/";
 
     @FindBy(xpath = "//a[contains(text(), 'Включить автообновление страниц')]")
     WebElement autoRefreshTrue;
@@ -21,15 +20,6 @@ public abstract class Page {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-    /*public String getMainColorOfButton() {
-        WebElement button = driver.findElement(By.id("yui-gen5-button"));
-        *//*List<WebElement> button = driver.findElements(By.id("yui-gen5-button"));*//*
-        if (button.isEnabled()) {
-            return button.getCssValue("background-color");
-        }
-        return null;
-
-    }*/
 
     public void clickAutoRefreshTrue() {
         autoRefreshTrue.click();
@@ -40,27 +30,21 @@ public abstract class Page {
         autoRefreshFalse.click();
     }
 
-    public boolean getAutoRefreshTrue()
-    {
+    public boolean getAutoRefreshTrue() {
         try {
             return autoRefreshTrue.isEnabled();
-        }
-        catch(Exception e) {
+        } catch (Exception e) {
             return false;
-    }
-        //return !driver.findElements(By.xpath("//a[contains(text(), 'Включить автообновление страниц')]")).isEmpty();
+        }
 
     }
 
-    public boolean getAutoRefreshFalse()
-    {
+    public boolean getAutoRefreshFalse() {
         try {
             return autoRefreshFalse.isEnabled();
-        }
-        catch(Exception e) {
+        } catch (Exception e) {
             return false;
         }
-        //return !driver.findElements(By.xpath("//a[contains(text(), 'Отключить автообновление страниц')]")).isEmpty();
     }
 
     public abstract void open();

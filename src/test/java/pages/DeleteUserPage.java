@@ -28,13 +28,11 @@ public class DeleteUserPage extends Page {
         return QuestionAboutDeleting.getText();
     }
 
-    public String getButtonColor()
-    {
+    public String getButtonColor() {
         return deleteButton.getCssValue("background-color");
     }
 
-    public void open()
-    {
+    public void open() {
 
     }
 }

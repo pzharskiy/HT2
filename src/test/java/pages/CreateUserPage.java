@@ -8,9 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class CreateUserPage extends Page {
 
-    /*@FindBy(linkText = "Создать пользователя")
-    private WebElement createUsers;*/
-
     @FindBy(xpath = "//*[@id=\"main-panel\"]/form")
     private WebElement form;
 
@@ -69,14 +66,11 @@ public class CreateUserPage extends Page {
         return PageFactory.initElements(driver, UsersPage.class);
     }
 
-    public String getButtonColor()
-    {
-        //driver.findElement(By.id("yui-gen5-button"));
+    public String getButtonColor() {
         return driver.findElement(By.id("yui-gen5-button")).getCssValue("background-color");
     }
 
-    public void open()
-    {
-        driver.navigate().to(BASE_URL+"securityRealm/addUser");
+    public void open() {
+        driver.navigate().to(BASE_URL + "securityRealm/addUser");
     }
 }

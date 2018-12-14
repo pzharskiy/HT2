@@ -12,21 +12,19 @@ public class JenkinsTest {
 
 
     private Steps steps;
-    private final String USERNAME = "pzharskiy";
-    private final String PASSWORD = "Riseagainst";
+    private final String USERNAME = "login";
+    private final String PASSWORD = "password";
 
     @BeforeMethod(description = "Init browser")
-    public void setUp()
-    {
+    public void setUp() {
         steps = new Steps();
         steps.openBrowser();
     }
 
     @Test
-    public void TestJenkins()
-    {
+    public void TestJenkins() {
         //№0 - Авторизация
-        steps.loginJenkins(USERNAME,PASSWORD);
+        steps.loginJenkins(USERNAME, PASSWORD);
         //№1 - После клика по ссылке «Manage Jenkins» на странице появляется элемент dt с текстом «Manage Users»
         // и элемент dd с текстом «Create/delete/modify users that can log in to this Jenkins».
         steps.clickManagePersonLink();
@@ -73,8 +71,7 @@ public class JenkinsTest {
 
 
     @AfterMethod(description = "Stop Browser")
-    public void stopBrowser()
-    {
+    public void stopBrowser() {
         steps.closeBrowser();
     }
 

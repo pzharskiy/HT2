@@ -28,9 +28,7 @@ public class RegistrationPage extends Page {
         return PageFactory.initElements(driver, MainPage.class);
     }
 
-    public void open()
-    {
+    public void open() {
         driver.navigate().to(BASE_URL);
-       // driver.get("http://localhost:8080/");
     }
 }

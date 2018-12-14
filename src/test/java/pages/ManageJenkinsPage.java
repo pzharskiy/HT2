@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ManageJenkinsPage extends Page{
+public class ManageJenkinsPage extends Page {
 
 
     @FindBy(xpath = "//dt[contains(text(), 'Управление пользователями')]")
@@ -20,7 +20,7 @@ public class ManageJenkinsPage extends Page{
     @FindBy(xpath = "//dt[contains(text(), 'Управление пользователями')]/ancestor::a")
     private WebElement linkManageUser;
 
-    public ManageJenkinsPage(WebDriver driver){
+    public ManageJenkinsPage(WebDriver driver) {
         super(driver);
     }
 
@@ -37,8 +37,7 @@ public class ManageJenkinsPage extends Page{
         return dtManageUsers;
     }
 
-    public void open()
-    {
-        driver.navigate().to(BASE_URL+"manage");
+    public void open() {
+        driver.navigate().to(BASE_URL + "manage");
     }
 }

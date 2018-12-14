@@ -61,8 +61,7 @@ public class UsersPage extends Page {
         return linkCreateUsers;
     }
 
-    public void open()
-    {
-        driver.navigate().to(BASE_URL+"securityRealm/");
+    public void open() {
+        driver.navigate().to(BASE_URL + "securityRealm/");
     }
 }
